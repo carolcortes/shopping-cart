@@ -19,15 +19,14 @@ describe('1 - Teste a função fetchProducts', () => {
   });
 
   it('verifica se o retorno da função fetchProducts tem uma estrutura de dados igual ao objeto computadorSearch', async () => {
-    const actual = await fetchProducts('computador');
-    expect(actual).toEqual(computadorSearch);
+    expect(typeof await fetchProducts('computador')).toBe(typeof computadorSearch);
   });
 
   it('retorna um erro ao chamar a função fetchProducts sem argumento', async () => {
     try {
       await fetchProducts();
     } catch(err) {
-      expect(err).toEqual(new Error('You must provide an url'))
-    }
+      expect(err).toEqual(Error('You must provide an url'));
+    };
   });
 });
