@@ -21,7 +21,7 @@ const saveCart = () => {
       description: cartItems[index].innerText,
     });
     }
-    localStorage.setItem('savedCart', JSON.stringify(itemsList));
+    saveCartItems(JSON.stringify(itemsList));
   }
 };
 
@@ -45,7 +45,7 @@ const createCartItemElement = ({ id: sku, title: name, price: salePrice }) => {
 const getSkuFromProductItem = (item) => item.querySelector('span.item__sku').innerText;
 
 const oldCart = () => {
-  const savedCart = JSON.parse(localStorage.getItem('savedCart'));
+  const savedCart = JSON.parse(getSavedCartItems());
   const ol = document.querySelector('.cart__items');
   if (savedCart) {
     savedCart.forEach((item) => {
