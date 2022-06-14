@@ -1,5 +1,6 @@
 let total = document.querySelector('.total-price');
 const cart = document.querySelector('.cart');
+const clearBtn = document.querySelector('.empty-cart');
 
 const createProductImageElement = (imageSource) => {
   const img = document.createElement('img');
@@ -119,6 +120,15 @@ const getProducts = async () => {
   products.forEach(({ id, title, thumbnail, price }) => items
   .appendChild(createProductItemElement(id, title, thumbnail, price)));
 };
+
+const clearCart = () => {
+  const cartItems = document.querySelector('.cart__items');
+  cartItems.textContent = '';
+  localStorage.clear();
+  total.innerText = '';
+  sumPrices = 0;
+};
+clearBtn.addEventListener('click', clearCart);
 
 window.onload = () => {
   getProducts();
