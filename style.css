@@ -147,3 +147,10 @@ body {
   border: 2px solid rgb(5, 52, 219);
   background-color: rgb(249, 249, 246);
 }
+
+.item__price {
+  display: flex;
+  align-self: center;
+  padding: 5px;
+  font-size: 20px;
+}

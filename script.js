@@ -2,6 +2,7 @@ const cartItems = document.querySelector('.cart__items');
 let total = document.querySelector('.total-price');
 const cart = document.querySelector('.cart');
 const clearBtn = document.querySelector('.empty-cart');
+let sumPrices = JSON.parse(localStorage.getItem('totalCart'));
 
 const createProductImageElement = (imageSource) => {
   const img = document.createElement('img');
@@ -17,10 +18,7 @@ const createCustomElement = (element, className, innerText) => {
   return e;
 };
 
-let sumPrices = JSON.parse(localStorage.getItem('totalCart'));
 const totalPrice = () => {
-  // const setPrice = Number.isInteger(sumPrices)
-  // ? `${sumPrices.toLocaleString()},00` : `${sumPrices.toLocaleString()}`;
   if (!total) {
     total = document.createElement('h1');
     total.className = 'total-price';
@@ -47,7 +45,7 @@ const removePrice = (event) => {
   const itemCart = event.target.innerText.split('');
   const index = itemCart.indexOf('$');
   const price = parseFloat(itemCart.slice(index + 1).join(''));
-  sumPrices -= price;
+  sumPrices = Math.round((sumPrices - price) * 100) / 100;
   total.innerText = sumPrices;
 };
 
@@ -67,7 +65,7 @@ const createCartItemElement = ({ id: sku, title: name, price: salePrice }) => {
   li.className = 'cart__item';
   li.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: $${salePrice}`;
   li.addEventListener('click', cartItemClickListener);
-  sumPrices += salePrice;
+  sumPrices = Math.round((salePrice + sumPrices) * 100) / 100;
   return li;
 };
 
@@ -106,7 +104,7 @@ const createProductItemElement = (sku, name, image, price) => {
   section.appendChild(createCustomElement('span', 'item__sku', sku));
   section.appendChild(createCustomElement('span', 'item__title', name));
   section.appendChild(createProductImageElement(image));
-  section.appendChild(createCustomElement('span', 'item__price', `R$ ${setPrice}`));
+  section.appendChild(createCustomElement('span', 'item__price', `$ ${setPrice}`));
   section.appendChild(createCustomElement('button', 'item__add', 'Adicionar ao carrinho!'))
     .addEventListener('click', getItem);
 
