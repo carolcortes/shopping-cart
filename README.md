@@ -1,7 +1,7 @@
 # Projeto Shopping Cart :shopping_cart:
 ``Junho/2022``
 
-> Projeto desenvolvido no Bloco 9 - JavaScript e Testes Assíncronos, no módulo de Fundamentos de Desenvolvimento Web, na [Trybe](https://www.betrybe.com/).
+> Projeto desenvolvido no Bloco 9 - JavaScript e Testes Assíncronos, no módulo de Desenvolvimento Front-end, na [Trybe](https://www.betrybe.com/).
 
 ## Habilidades:
  - Desenvolvimento de um **carrinho de compras** totalmente dinâmico, consumindo dados diretamente da [API do Mercado Livre](https://developers.mercadolivre.com.br/pt_br/itens-e-buscas);
