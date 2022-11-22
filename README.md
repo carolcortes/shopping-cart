@@ -1,4 +1,4 @@
-# Projeto Shopping Cart
+# Projeto Shopping Cart :shopping_cart:
 ``Junho/2022``
 
 > Projeto desenvolvido no Bloco 9 - JavaScript e Testes Assíncronos, no módulo de Fundamentos de Desenvolvimento Web, na [Trybe](https://www.betrybe.com/).
