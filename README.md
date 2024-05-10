@@ -6,6 +6,7 @@
 ## Habilidades:
  - Desenvolvimento de um **carrinho de compras** totalmente dinâmico, consumindo dados diretamente da [API do Mercado Livre](https://developers.mercadolivre.com.br/pt_br/itens-e-buscas);
  - ``HTML``, ``CSS`` e ``JavaScript``;
+ - ``Web Storage``
  - ``TDD`` (Desenvolvimento orientado a testes).
  
  ## Funcionalidade:
